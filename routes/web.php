@@ -17,5 +17,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('/login');
 });
+Route::post('/login', [HomeController::class, 'login']);
 // use HomeController
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/dashboard', [HomeController::class, 'index']);
