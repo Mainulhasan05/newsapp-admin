@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/rifatewu/public_html
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/mv $DEPLOYPATH/public/* $DEPLOYPATH
+    - /bin/rm -rf $DEPLOYPATH/public
+    - /bin/rm -f $DEPLOYPATH/.cpanel.yml
+    - /bin/rm -f $DEPLOYPATH/.gitignore
+    - /bin/rm -rf $DEPLOYPATH/.git
+
