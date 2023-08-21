@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('/login');
 });
-Route::post('/login', [HomeController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 // use HomeController
 Route::get('/dashboard', [HomeController::class, 'index']);
