@@ -16,11 +16,12 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
+
 Route::post('/', [AuthController::class, 'login'])->name('login');
-// use HomeController
-Route::get('/dashboard', [HomeController::class, 'index']);
+
+Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth','isAdmin'])->name('dashboard');
 
 Auth::routes();
 
