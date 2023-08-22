@@ -16,8 +16,12 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('/login');
+    return view('welcome');
 });
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/', [AuthController::class, 'login'])->name('login');
 // use HomeController
 Route::get('/dashboard', [HomeController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
